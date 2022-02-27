@@ -38,6 +38,7 @@ h1 {
 #contact,
 #social {
     border:#F28900 2px dotted;
+    border-radius: 15px;
     background-color: #FFF9F2;
     padding: 0 2% 2% 2%;
 }
@@ -54,7 +55,12 @@ section {
     scroll-margin-top: 4.2rem;
 }
 
-/* nav */
+@media only screen and (max-width: 768px) {
+    section {
+        scroll-margin-top: 17rem;
+    }
+}
+
 
 h2 {
     font-weight: 500;
@@ -69,6 +75,8 @@ h3 {
     border-bottom:#F28900 3px dotted;
     height: 4.5rem;
 }
+
+/* nav */
 
 nav {
     color: #FFF9F2;
@@ -92,44 +100,44 @@ nav img {
 
 .jumbotron {
     background-image: url(resources/images/diagKeybrd.png);
-    height: 30rem;
     background-size: cover;
     background-position: center;
+    height: 20rem;
 }
 
-#home .col-11 {
-    margin: 2rem 5rem;
+#home .jumbotron {
+    height: 30rem;
 }
 
 #home h1 {
     margin-top: 10%;
-    padding: 0;
 }
 
-#home h3 {
+.jumbotron h1 {
+    padding: 0;
+    font-size: 4rem;
+}
+
+.jumbotron h3 {
     margin: 0;
     padding: 0;
 }
 
-#home h1 {
-    font-size: 4rem;
-}
-
-#home h3 {
+.jumbotron h3 {
     color: #F28900;
     text-shadow: #34343C 1.5px 1.5px;
     font-size: 2rem;
 }
 
 @media only screen and (max-width: 576px) {
-    .jumbotron {
+    #home .jumbotron {
         height: 20rem;
     }
-    #home h1 {
+    .jumbotron h1 {
         font-size: 3rem;
         margin-top: 20%;
     }
-    #home h3 {
+    .jumbotron h3 {
         font-size: 1.5rem;
     }
 }
@@ -142,11 +150,22 @@ nav img {
     color: #FFF9F2;
     height: 100%;
     border:#F28900 3px dotted;
+    border-radius: 10px;
 }
 
 .card-title {
     padding-bottom: 5px;
     border-bottom: #F28900 3px dotted;
+}
+
+/* skills */
+
+#skills img {
+    width: 100%;
+    height: auto;
+    padding: 15%;
+    border: #2F7692 1px solid;
+    border-radius: 25%;
 }
 
 /* projects */
@@ -155,6 +174,7 @@ nav img {
 .books,
 .credit {
     border:#2F7692 1px solid;
+    border-radius: 10px;
     padding: 2%;
     height: 30rem;
 }
@@ -252,19 +272,29 @@ nav img {
 }
 
 
-/* skills */
-
-#skills img {
-    width: 100%;
-    height: auto;
-    padding: 10%;
-    border: #2F7692 1px solid;
-}
-
 
 
 /* contact */
 
+#contact img {
+    width: 75%;
+    height: auto;
+    border:#2F7692 1px solid;
+    border-radius: 50%;
+    padding: 1%;
+}
 
 
 /* social */
+
+#social h2 {
+    padding-top: 8%;
+}
+#social img {
+    width: 100%;
+    height: auto;
+    padding: 15%;
+    margin: 0 2%;
+    border: #2F7692 1px solid;
+    border-radius: 25%;
+}
