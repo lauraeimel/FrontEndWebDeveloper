@@ -1,0 +1,133 @@
+
+html {
+    background-color: #2F7692;
+    color: #34343C;
+}
+
+body {
+    background-color: #2F7692;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Eczar', serif;
+}
+
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: #FFF9F2;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 8rem;
+    color: #F28900;
+    text-shadow: #34343C 3px 3px;
+}
+
+/* nav */
+
+h2 {
+    font-weight: 500;
+    font-size: 3.5rem;
+    background-color: #FFF9F2;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+nav {
+    color: #FFF9F2;
+}
+
+nav img {
+    height: 40px;
+    width: auto;
+}
+
+.navbar {
+    font-family: 'Eczar', serif;
+    background-color: #2F7692;
+}
+
+.navbar-brand {
+    padding-top: 5px
+}
+
+/* jumbotron */
+
+.jumbotron {
+    background-image: url(resources/images/diagKeybrd.png);
+    height: 20rem;
+    background-size: cover;
+    background-position: center;
+}
+
+#home .col-11 {
+    margin: 2rem 5rem;
+}
+
+#home h1,
+#home h3 {
+    margin: 0;
+    padding: 0;
+}
+
+#home h1 {
+    font-size: 4rem;
+}
+
+#home h3 {
+    color: #F28900;
+    text-shadow: #34343C 1.5px 1.5px;
+    font-size: 2rem;
+}
+
+
+/* bio */
+
+#bio,
+#skills,
+#projects,
+#contact,
+#social {
+    border:#F28900 2px dotted;
+    background-color: #FFF9F2;
+    padding: 0 2%;
+}
+
+#bio h2,
+#skills h2,
+#projects h2,
+#contact h2,
+#social h2 {
+    margin-top: 3%;
+}
+
+/* projects */
+
+
+
+/* skills */
+
+#skills img {
+    width: 80%;
+    height: auto;
+}
+
+
+/* contact */
+
+
+
+/* social */
