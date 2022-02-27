@@ -11,25 +11,25 @@
     <title>Laura Imel | Web Developer</title>
 </head>
 <body>
-    <header>
+    <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="index.html"><img src="resources/images/Logo.png" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
                 <a class="nav-link" href="index.html">Home </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#bio">Bio</a>
+                <a class="nav-link" href="index.html#bio">Bio</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="index.html#projects">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#skills">Skills</a>
+                    <a class="nav-link" href="index.html#skills">Skills</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Contact <span class="sr-only">(current)</span></a>
