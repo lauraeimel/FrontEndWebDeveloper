@@ -36,7 +36,8 @@ h1 {
 #skills,
 #projects,
 #contact,
-#social {
+#social,
+.acknowledge {
     border:#F28900 2px dotted;
     border-radius: 15px;
     background-color: #FFF9F2;
@@ -47,7 +48,8 @@ h1 {
 #skills h2,
 #projects h2,
 #contact h2,
-#social h2 {
+#social h2,
+.acknowledge h2 {
     margin-top: 3%;
 }
 
@@ -57,7 +59,7 @@ section {
 
 @media only screen and (max-width: 768px) {
     section {
-        scroll-margin-top: 17rem;
+        scroll-margin-top: 19rem;
     }
 }
 
@@ -82,7 +84,17 @@ nav {
     color: #FFF9F2;
 }
 
+nav ul {
+    margin-right: 3%;
+}
+
+nav li {
+    font-size: 1.25rem;
+    padding: 0 1%;
+}
+
 nav img {
+    padding-top: 5px;
     height: 40px;
     width: auto;
 }
@@ -90,10 +102,6 @@ nav img {
 .navbar {
     font-family: 'Eczar', serif;
     background-color: #2F7692;
-}
-
-.navbar-brand {
-    padding-top: 5px
 }
 
 /* jumbotron */
@@ -176,25 +184,12 @@ nav img {
     border:#2F7692 1px solid;
     border-radius: 10px;
     padding: 2%;
-    height: 30rem;
+    height: 32rem;
 }
 
 #projects img {
     width: 100%;
     margin: 3% 0;
-}
-
-#projects .credit img {
-    height: 26%;
-    width: 100%;
-    object-fit: cover;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-#projects .credit p {
-    margin-top: -123%;
-    padding-top: 0;
 }
 
 #projects a {
@@ -271,6 +266,34 @@ nav img {
     }
 }
 
+/* social */
+
+#social h2 {
+    padding-top: 8%;
+}
+#social img {
+    width: 100%;
+    height: auto;
+    padding: 15%;
+    margin: 0 2%;
+    border: #2F7692 1px solid;
+    border-radius: 25%;
+}
+
+/* footer */
+
+footer {
+    height:fit-content;
+    background-color:#34343C;
+    margin-bottom:1%;
+}
+
+footer p {
+    color:#FFF9F2;
+    font-size: .75rem;
+    margin-left: 15%;
+}
+
 
 
 
@@ -284,17 +307,29 @@ nav img {
     padding: 1%;
 }
 
-
-/* social */
-
-#social h2 {
-    padding-top: 8%;
+#contact,
+.acknowledge {
+    margin-bottom: 3%;
 }
-#social img {
-    width: 100%;
-    height: auto;
-    padding: 15%;
-    margin: 0 2%;
-    border: #2F7692 1px solid;
-    border-radius: 25%;
+
+/* acknowledge */
+
+.acknowledge h2 {
+    border-bottom:#F28900 3px dotted;
+}
+
+.signed {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+}
+
+button a {
+    text-decoration: none;
+    color:#34343C;
+}
+
+button a:hover {
+    color: #FFF9F2;
+    background-color: #34343C;
+    border:#F28900 2px dotted;
 }
