@@ -108,12 +108,14 @@ nav img {
 
 .jumbotron {
     background-image: url(resources/images/diagKeybrd.png);
+    background-color: #2F7692;
     background-size: cover;
     background-position: center;
     height: 20rem;
 }
 
 #home .jumbotron {
+    /*animation: careerChangeLg 12s linear;*/
     height: 30rem;
 }
 
@@ -136,10 +138,16 @@ nav img {
     text-shadow: #34343C 1.5px 1.5px;
     font-size: 2rem;
 }
+/*
+#home .jumbotron h1,
+#home .jumbotron h3 {
+    animation: titleChange 12s linear;
+}*/
 
 @media only screen and (max-width: 576px) {
     #home .jumbotron {
-        height: 20rem;
+        height: 15rem;
+        /*animation: careerChangeSm 12s linear;*/
     }
     .jumbotron h1 {
         font-size: 3rem;
@@ -149,6 +157,105 @@ nav img {
         font-size: 1.5rem;
     }
 }
+/*
+@keyframes careerChangeLg {
+    0% {
+        background-image: url(resources/images/diamondSetterBG.png);
+        opacity: 100%;
+        width: 100%;
+        margin-right: 0;
+    }
+    10% {
+        background-image: url(resources/images/diamondSetterBG.png);
+        opacity: 80%;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    49% {
+        background-image: url(resources/images/diamondSetterBG.png);
+        opacity: 0%;
+        width: 10%;
+        margin-right: 100%;
+    }
+    50% {
+        background-image: none;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    51% {
+        background-image: url(resources/images/diagKeybrd.png);
+        opacity: 2%;
+        width: 10%;
+        margin-left: 100%;
+    }
+    100% {
+        background-image: url(resources/images/diagKeybrd.png);
+        opacity: 100%;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@keyframes careerChangeSm {
+    0% {
+        background-image: url(resources/images/diamondSetterBG.png);
+        opacity: 100%;
+        width: 100%;
+        height: 12rem;
+        margin-right: 0;
+    }
+    10% {
+        background-image: url(resources/images/diamondSetterBG.png);
+        opacity: 80%;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    49% {
+        background-image: url(resources/images/diamondSetterBG.png);
+        opacity: 0%;
+        width: 10%;
+        height: 5rem;
+        margin-right: 100%;
+    }
+    50% {
+        background-image: none;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    51% {
+        background-image: url(resources/images/diagKeybrd.png);
+        opacity: 2%;
+        width: 10%;
+        height: 5rem;
+        margin-left: 100%;
+    }
+    100% {
+        background-image: url(resources/images/diagKeybrd.png);
+        opacity: 100%;
+        width: 100%;
+        height: 15rem;
+        margin-left: 0;
+    }
+}
+
+@keyframes titleChange {
+    0% {
+        opacity: 0%;
+    }
+    47% {
+        opacity: 5%;
+        font-size: 50%;
+    }
+    60% {
+        opacity: 50%;
+        font-size: 75%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}*/
 
 
 /* bio */
