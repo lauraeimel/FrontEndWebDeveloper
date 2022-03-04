@@ -77,7 +77,7 @@ if(isset($_POST['send']) && $email && $found) {
                 <a class="nav-link" href="index.html#projects">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" href="contact-me.html">Contact</a>
                 </li>
             </ul>
             </div>
