@@ -107,8 +107,8 @@ nav img {
 /* jumbotron */
 
 .jumbotron {
-    background-image: url(resources/images/diagKeybrd.png);
     background-color: #2F7692;
+    background-image: url(../resources/images/diagKeybrd.jpg);
     background-size: cover;
     background-position: center;
     height: 20rem;
@@ -421,6 +421,9 @@ footer p {
 
 /* acknowledge */
 
+.acknowledge {
+    margin-bottom: 4rem;
+}
 .acknowledge h2 {
     border-bottom:#F28900 3px dotted;
 }

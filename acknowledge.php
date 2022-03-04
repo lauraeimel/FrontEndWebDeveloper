@@ -1,24 +1,41 @@
 <?php
 
-$email = $_POST['email'];
-$name = $_POST['firstName'] . " " . $_POST['lastName'];
-$phone= $_POST['tel'];
-$found = $_POST['found'];
-$reason = $_POST['reason'];
-$message = '';
-$altMessage = 'testing 1 2 3...';
+$validation_error = '';
+$first_name = htmlspecialchars($_POST['firstName']);
+$last_name = htmlspecialchars($_POST['lastName']);
+$phone = filter_var($_POST['tel'], FILTER_SANITIZE_NUMBER_INT);
+$found = '';
+if($_POST['found'] === "Codecademy" || $_POST['found'] === "GitHub" || $_POST['found'] = "Discord" || $_POST['found'] === "LinkedIn" || $_POST['found'] === "Other") {
+    $found = $_POST['found'];
+} else {
+    $validation_error .= "Please fill out the form correctly and resubmit.\r\n";
+}
+$reason = htmlspecialchars($_POST['reason']);
+$email = '';
+if(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    return $email = $_POST['email'];
+} else {
+    $validation_error = 'It looks like your email was entered incorrectly.';
+};
 
-if(isset($_POST['send'])) {
-    global $email, $name, $phone, $found, $reason, $message, $altMessage;
+
+
+if(isset($_POST['send']) && $email && $found) {
     $to = 'laura@lauraimel.com';
     $subject = 'Web Form Submission';
-    $message = 'Name: ' . $name . "\r\n\r\n";
+    $message = 'Name: ' . $first_name . $last_name . "\r\n\r\n";
     $message .= 'Email: ' . $email . "\r\n\r\n";
     $message .= 'Phone: ' . $phone . "\r\n\r\n";
-    $message .= 'How you found me: ' . $found . "\r\n\r\n";
+    $message .= 'How you found me: ' . $_POST['found'] . "\r\n\r\n";
     $message .= 'Reason for contacting: ' . $reason;
-    $message .= $altMessage;
+    $headers = "From: laura@lauraimel.com\r\n";
+    $headers .= 'Content-Type: text/plain; charset=utf-8';
+    if($email) {
+        $headers .= "\r\nReply-To: $email";
+    }
     $success = mail($to, $subject, $message, $headers);
+} else {
+    return $validation_error;
 }
 
 ?>
@@ -34,7 +51,7 @@ if(isset($_POST['send'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> 
-    <link href="styles.css" type="text/css" rel="stylesheet">
+    <link href="resources/styles.css" type="text/css" rel="stylesheet">
     <script src="scripts.js" defer></script>
     <title>Laura Imel | Web Developer | Acknowledgement</title>
 </head>
@@ -54,10 +71,10 @@ if(isset($_POST['send'])) {
                 <a class="nav-link" href="index.html#bio">Bio</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="index.html#projects">Projects</a>
+                <a class="nav-link" href="index.html#skills">Skills</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html#skills">Skills</a>
+                <a class="nav-link" href="index.html#projects">Projects</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
@@ -94,7 +111,8 @@ if(isset($_POST['send'])) {
                     <p class="signed text-center">Laura</p>
                 <?php } else { ?>
                     <h4 class="text-center">Hmm, I don't know what went wrong but I didn't receive your message.</h4>
-                    <p class="text-center">Please feel free to submit your form again. If you continue having difficulties please contact me on <a href="https://twitter.com/ImmelEliza">Twitter</a> and I will correct any issues on my end as soon as possible. I look forward to hearing from you!</p>
+                    <p class="text-center"><?= $validation_error; ?></p>
+                    <p class="text-center">I look forward to hearing from you!</p>
                 <?php } ?>
             </div>
         </div>
@@ -106,7 +124,7 @@ if(isset($_POST['send'])) {
     </div>
     </main>
 
-    <footer>
+    <footer class="fixed-bottom">
         <p>&#169 Laura Imel 2022</p>
     </footer>
    
