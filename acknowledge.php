@@ -52,11 +52,12 @@ if(isset($_POST['send']) && $email && $found) {
     <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> 
     <link href="resources/styles.css" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" >
     <script src="scripts.js" defer></script>
     <title>Laura Imel | Web Developer | Acknowledgement</title>
 </head>
 <body>
-    <header/* class="sticky-top"*/>
+    <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="index.html"><img src="resources/images/Logo.png" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,15 +88,23 @@ if(isset($_POST['send']) && $email && $found) {
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center text-sm-right">
-                    <?php if (isset($success) && $success) { ?>
-                    <h1 class="display-4">Thank you</h1>
-                    <h3 class="lead">Your request has been submitted</h3>
-                    <?php } else { ?> 
-                    <h1 class="display-4">Uh oh!</h1>
-                    <h3 class="lead">Looks like there was a problem sending your message...</h3>
-                    <?php } ?>
-                </div>
+                <div class="col">
+                    <picture>
+                        <source media="(max-width: 500px)" srcset="./resources/images/Keyboard500.png">
+                        <source media="(max-width: 800px)" srcset="./resources/images/Keyboard800.png">
+                        <source media="(max-width: 1200px)" srcset="./resources/images/Keyboard1200.png">
+                        <source media="(max-width: 1800px)" srcset="./resources/images/Keyboard1800.png">
+                        <img src="./resources/images/Keyboard2000.png" alt="stylized keyboard">
+                    </picture>
+                    <div class="col-12 text-right">
+                        <?php if (isset($success) && $success) { ?>
+                        <h1 class="display-4">Thank you</h1>
+                        <h3 class="lead">Your request has been submitted</h3>
+                        <?php } else { ?> 
+                        <h1 class="display-4">Uh oh!</h1>
+                        <h3 class="lead">Looks like there was a problem sending your message...</h3>
+                        <?php } ?>
+                    </div>
             </div>
         </div>
     </div>
