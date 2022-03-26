@@ -110,6 +110,7 @@ nav img {
     background-color: #2F7692;
     width: 100%;
     padding: 0;
+    border-bottom:#F28900 .75px solid;
 }
 
 .jumbotron .container {
@@ -147,14 +148,10 @@ nav img {
     padding-left: 5%;
 }
 
-#home h1 {
-    margin-top: 10%;
-}
-
-
 .jumbotron h1 {
     padding: 0 5% 0 0;
     font-size: 4rem;
+    margin-top: 10%;
 }
 
 .jumbotron h3 {
@@ -295,6 +292,7 @@ nav img {
     height: 100%;
     border:#F28900 3px dotted;
     border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .card-title {
@@ -310,6 +308,8 @@ nav img {
     padding: 15%;
     border: #2F7692 1px solid;
     border-radius: 25%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
 }
 
 /* projects */
@@ -320,7 +320,7 @@ nav img {
     border:#2F7692 1px solid;
     border-radius: 10px;
     padding: 2%;
-    height: 32rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 #projects img {
@@ -408,12 +408,14 @@ nav img {
     padding-top: 8%;
 }
 #social img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     padding: 15%;
     margin: 0 2%;
     border: #2F7692 1px solid;
     border-radius: 25%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
 }
 
 /* footer */
@@ -438,20 +440,29 @@ footer p {
 #contact img {
     width: 75%;
     height: auto;
-    border:#2F7692 1px solid;
+    background-color: #2F7692;
+    border:#F28900 2px solid;
     border-radius: 50%;
     padding: 1%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
 }
 
-#contact,
-.acknowledge {
+#contact {
     margin-bottom: 3%;
+}
+
+select,
+input,
+textarea,
+button {
+    box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
 }
 
 /* acknowledge */
 
 .acknowledge {
-    margin-bottom: 4rem;
+    margin: 2.5rem auto 4rem auto;
 }
 .acknowledge h2 {
     border-bottom:#F28900 3px dotted;

@@ -4,29 +4,30 @@ $validation_error = '';
 $first_name = htmlspecialchars($_POST['firstName']);
 $last_name = htmlspecialchars($_POST['lastName']);
 $phone = filter_var($_POST['tel'], FILTER_SANITIZE_NUMBER_INT);
-$found = '';
-if($_POST['found'] === "Codecademy" || $_POST['found'] === "GitHub" || $_POST['found'] = "Discord" || $_POST['found'] === "LinkedIn" || $_POST['found'] === "Other") {
+$found = $_POST['found'];
+/*if($_POST['found'] === "Codecademy" || $_POST['found'] === "GitHub" || $_POST['found'] = "Discord" || $_POST['found'] === "LinkedIn" || $_POST['found'] === "Other") {
     $found = $_POST['found'];
 } else {
-    $validation_error .= "Please fill out the form correctly and resubmit.\r\n";
-}
+    $validation_error = "Please fill out the form correctly and resubmit.\r\n";
+}*/
 $reason = htmlspecialchars($_POST['reason']);
 $email = '';
-if(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    return $email = $_POST['email'];
+if(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL)) {
+    if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $email = $_POST['email'];
+    }
 } else {
-    $validation_error = 'It looks like your email was entered incorrectly.';
+    $validation_error .= 'It looks like your email was entered incorrectly.';
 };
 
 
-
-if(isset($_POST['send']) && $email && $found) {
+if(isset($_POST['send']) && $email) {
     $to = 'laura@lauraimel.com';
     $subject = 'Web Form Submission';
     $message = 'Name: ' . $first_name . $last_name . "\r\n\r\n";
     $message .= 'Email: ' . $email . "\r\n\r\n";
     $message .= 'Phone: ' . $phone . "\r\n\r\n";
-    $message .= 'How you found me: ' . $_POST['found'] . "\r\n\r\n";
+    $message .= 'How you found me: ' . $found . "\r\n\r\n";
     $message .= 'Reason for contacting: ' . $reason;
     $headers = "From: laura@lauraimel.com\r\n";
     $headers .= 'Content-Type: text/plain; charset=utf-8';
@@ -105,9 +106,11 @@ if(isset($_POST['send']) && $email && $found) {
                         <h3 class="lead">Looks like there was a problem sending your message...</h3>
                         <?php } ?>
                     </div>
+                </div>
             </div>
         </div>
     </div>
+    
     
     <main>
     <div class="container acknowledge">
